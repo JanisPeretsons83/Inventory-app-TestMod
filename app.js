@@ -6,6 +6,7 @@ let dimensionsLibrary = [];
 let importedBackup = null;
 let importedAreaSummary = null;
 let dataChanged = false;
+let isDemoMode = false;
 
 // ✅ Login
 
@@ -30,6 +31,17 @@ const areasByLocation = {
   ]
 
 };
+
+function startDemoMode() {
+    isDemoMode = true;
+  document.getElementById("locationSelect")
+    .style.display = "none";
+  document.getElementById("appContent")
+    .style.display = "block";
+  document.getElementById("infoLine")
+    .innerText = "TESTA REŽĪMS";
+  updateAreas();
+}
 
 function updateAreas() {
   const location = localStorage.getItem("location");
@@ -559,7 +571,7 @@ window.onload = () => {
 document.getElementById("backupFile")
           .addEventListener("change", importBackupFile);
   
-  if (backupRaw) {
+  if (!isDemoMode && backupRaw) {
     const backup =
       JSON.parse(backupRaw);
     const age = Date.now() -
@@ -1120,7 +1132,7 @@ function closeConfirmModal() {
     }
 
 function saveAndExit() {
-  if (dataChanged) {
+  if (!isDemoMode && dataChanged) {
     saveBackup();
     exportBackupFile();
     dataChanged = false;
@@ -1154,6 +1166,7 @@ if ("serviceWorker" in navigator) {
 
 // ✅ BACKUP
 function saveBackup() {
+  if (isDemoMode) return;
     const totalPackages =
       data.reduce((sum, e) =>
       sum + (e.packages || 0), 0);
@@ -1185,6 +1198,7 @@ document.getElementById("restoreModal")
 }
 
 function restoreBackup() {
+  if (isDemoMode) return;
   const backup =
     JSON.parse(localStorage.getItem("backupData")
       );
@@ -1215,6 +1229,7 @@ function discardBackup() {
 }
 
 function exportBackupFile() {
+  if (isDemoMode) return;
   const backup =
     JSON.parse(
     localStorage.getItem("backupData")
@@ -1334,6 +1349,7 @@ document.getElementById("backupFile")
 }
 
 function restoreImportedBackup() {
+  if (isDemoMode) return;
   data = importedBackup.entries || [];
   localStorage.setItem(
     "data",
