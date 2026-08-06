@@ -1198,7 +1198,6 @@ document.getElementById("restoreModal")
 }
 
 function restoreBackup() {
-  if (isDemoMode) return;
   const backup =
     JSON.parse(localStorage.getItem("backupData")
       );
@@ -1229,7 +1228,7 @@ function discardBackup() {
 }
 
 function exportBackupFile() {
-  if (isDemoMode) return;
+  if (isDemoMode) return; //ja gribas testēt, tad izdzēs!!!
   const backup =
     JSON.parse(
     localStorage.getItem("backupData")
@@ -1349,7 +1348,6 @@ document.getElementById("backupFile")
 }
 
 function restoreImportedBackup() {
-  if (isDemoMode) return;
   data = importedBackup.entries || [];
   localStorage.setItem(
     "data",
