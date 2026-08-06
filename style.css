@@ -1,0 +1,297 @@
+body {
+  font-family: Arial;
+  background: #f2f4f7;
+  padding: 15px;
+  margin: 0;
+}
+
+#sizeSuggestions {
+  display: none;
+  margin: 5px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.sizeOption {
+  background: white;
+    border: 1px solid #ddd;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.sizeOption:hover {
+  background: #f2f4f7;
+}
+
+.info {
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal {
+overflow-y: auto;
+}
+.modalContent {
+max-height: 90vh;
+overflow-y: auto;
+}
+#areaList {
+max-height: 40vh;
+overflow-y: auto;
+padding: 10px;
+}
+
+#notice {
+opacity: 0;
+transition: opacity .25s ease;
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+min-width: 260px;
+max-width: 90vw;
+padding: 18px 22px;
+border-radius: 16px;
+text-align: center;
+font-weight: bold;
+font-size: 16px;
+color: white;
+z-index: 99999;
+box-shadow:
+0 10px 30px rgba(0,0,0,.3);
+}
+
+#notice.show {
+opacity: 1;
+}
+.notice-success {
+background: #2e7d32;
+}
+.notice-error {
+background: #c62828;
+}
+.notice-info {
+background: #1976d2;
+}
+
+//--------------------------------
+#message {
+  display: none;
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.danger {
+  background: #c62828;
+  color: white;
+}
+
+.activeLocation {
+  background: #2e7d32 !important;
+  color: white !important;
+}
+
+#mapsContainer a {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#GaliContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+#length {
+  flex: 1 1 auto;
+  min-width: 150px;
+}
+#galiBtn {
+  width: 90px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+/*Izvēlnes krāsojums*/
+.dropdown {
+  position: relative;
+}
+.menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.group {
+  background: transparent;
+  color: #1f4e79;
+  font-weight: bold;
+  padding: 8px 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+}
+
+.grade-k {
+  background: #C6EFCE;
+}
+.grade-a {
+  background: #FFEB9C;
+}
+.grade-1 {
+  background: #E2EFDA;
+}
+.grade-2 {
+  background: #BDD7EE;
+}
+.grade-pal {
+  background: #FCE4D6;
+}
+
+.item {
+  padding: 12px;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.item:hover {
+  transform: scale(1.02);
+  filter: brightness(0.92);
+}
+
+.calcInfo {
+  font-size: 12px;
+  color: gray;
+  white-space: nowrap;
+  display: none; /* ❗ sākumā neredzams */
+}
+
+.piecesRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/*Lokācijas izvēlne*/
+.areaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.areaRow select {
+  flex: 1; /* aizņem vietu */
+}
+
+.areaRow a {
+  white-space: nowrap; /* lai neiet jaunā rindā */
+  font-size: 14px;
+}
+/**/
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+input,
+select {
+  transition: all 0.2s ease;
+}
+input:focus,
+select:focus {
+  transform: scale(1.03);
+  border: 2px solid #2e7d32;
+  box-shadow: 0 0 10px rgba(46,125,50,.25);
+  outline: none;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 6px 0;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background: white;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.primary {
+  background: #2e7d32;
+  color: white;
+}
+
+.secondary {
+  background: #1976d2;
+  color: white;
+}
+
+.gray {
+  background: #888;
+  color: white;
+}
+
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+td, th {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.modal {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,.45);
+z-index: 99999;
+}
+.modalContent {
+background: white;
+max-width: 320px;
+margin: 20vh auto;
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
