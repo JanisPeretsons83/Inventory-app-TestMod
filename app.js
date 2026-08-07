@@ -33,17 +33,31 @@ const areasByLocation = {
 };
 
 function startDemoMode() {
-    isDemoMode = true;
-    const location =
-   localStorage.getItem("location");
+
+  const location =
+    localStorage.getItem("location");
+
+  if (!location) {
+    return showNotice(
+      "⚠️ Izvēlies ražotni",
+      "error"
+    );
+  }
+
+  isDemoMode = true;
+
   document.getElementById("locationSelect")
     .style.display = "none";
+
   document.getElementById("appContent")
     .style.display = "block";
+
   document.getElementById("infoLine")
-    .innerText = "TESTA REŽĪMS";
+    .innerText = TESTA REŽĪMS | ${location};
+
   updateAreas();
 }
+
 
 function updateAreas() {
   const location = localStorage.getItem("location");
