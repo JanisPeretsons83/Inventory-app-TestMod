@@ -1,7 +1,7 @@
 {
 "name": "Inventarizācija",
 "short_name": "Invent",
-"start_url": "/Inventory-app/",
+"start_url": "/Inventory-app-TestMod/",
 "display": "standalone",
 "background_color": "#ffffff",
 "theme_color": "#1f4e46",
