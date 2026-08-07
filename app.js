@@ -34,6 +34,8 @@ const areasByLocation = {
 
 function startDemoMode() {
     isDemoMode = true;
+    const location =
+   localStorage.getItem("location");
   document.getElementById("locationSelect")
     .style.display = "none";
   document.getElementById("appContent")
