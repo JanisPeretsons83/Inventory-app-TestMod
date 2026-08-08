@@ -53,7 +53,7 @@ function startDemoMode() {
     .style.display = "block";
 
   document.getElementById("infoLine")
-    .innerText = TESTA REŽĪMS | ${location};
+    .innerText = `TESTA REŽĪMS | ${location}`;
 
   updateAreas();
 }
