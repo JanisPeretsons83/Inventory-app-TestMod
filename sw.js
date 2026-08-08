@@ -1,4 +1,4 @@
-const CACHE_NAME = "inventory-app-TestMod-v10-5";
+const CACHE_NAME = "inventory-app-TestMod-v10-6";
 const BASE = "/Inventory-app-TestMod";
 
 const urlsToCache = [
