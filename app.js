@@ -1169,7 +1169,7 @@ function saveAndExit() {
 // ✅ SERVICE WORKER
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/Inventory-app/sw.js")
+  navigator.serviceWorker.register("/Inventory-app-TestMod/sw.js")
     .then(reg => {
       console.log("SW registered");
       // ✅ pārbauda update
